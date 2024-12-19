@@ -14,11 +14,11 @@
     }
   },
   "homepage": "https://pixijs.com/",
-  "bugs": "https://github.com/pixijs/extension-boilerplate/issues",
+  "bugs": "https://github.com/pixijs-userland/extension-boilerplate/issues",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/pixijs/extension-boilerplate.git"
+    "url": "https://github.com/pixijs-userland/extension-boilerplate.git"
   },
   "scripts": {
     "start": "xs serve",
@@ -39,16 +39,12 @@
   },
   "files": [
     "dist/",
-    "lib/",
-    "global.d.ts"
+    "lib/"
   ],
   "peerDependencies": {
-    "@pixi/core": "^7.0.0",
-    "@pixi/display": "^7.0.0"
+    "pixi.js": ">=8 <9"
   },
   "devDependencies": {
-    "@pixi/core": "^7.0.0",
-    "@pixi/display": "^7.0.0",
     "@pixi/extension-scripts": "latest"
   }
 }
