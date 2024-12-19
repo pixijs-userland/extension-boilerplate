@@ -16,9 +16,8 @@ npm run build
 | Path | Description |
 |---|---|
 | `./src` | Folder containing the source code for your extension |
-| `./test` | Folder containing the Jest-based unit-tests (i.e., `*.test.ts`) |
+| `./src/__tests__` | Folder containing the Jest-based unit-tests (i.e., `*.test.ts`) |
 | `./examples` | Folder containing any examples to demonstrate usage |
-| `./global.d.ts` | TypeScript global mixins for PixiJS |
 
 
 ## Publishing
