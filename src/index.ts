@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/triple-slash-reference,spaced-comment
 /// <reference path="../global.d.ts" />
 
-import { Rectangle } from '@pixi/core';
+import { Rectangle } from 'pixi.js';
 
 /**
  * Global PixiJS namespace.
@@ -29,7 +29,7 @@ import { Rectangle } from '@pixi/core';
  * @param {number} amount - The amount to expand (if greater than 0) or contract (if less than 0)
  * @return {PIXI.Rectangle} Instance for chaining.
  */
-function expand(this: Rectangle, amount: number): Rectangle
+Rectangle.prototype.expand = function expand(this: Rectangle, amount: number): Rectangle
 {
     this.x -= amount;
     this.y -= amount;
@@ -37,8 +37,6 @@ function expand(this: Rectangle, amount: number): Rectangle
     this.height += amount * 2;
 
     return this;
-}
-
-Rectangle.prototype.expand = expand;
+};
 
 export { Rectangle };

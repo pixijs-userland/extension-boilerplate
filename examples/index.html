@@ -13,25 +13,34 @@
     </head>
     <body>
         <h1>Rectangle Helpers</h1>
-        <script src="https://pixijs.download/dev/pixi.min.js"></script>
-        <script src="../dist/pixi-rectangle-helpers.js"></script>
-        <script>
-            const app = new PIXI.Application({ background: '#999' });
-            document.body.appendChild(app.view);
-
-            const shape = new PIXI.Sprite(PIXI.Texture.WHITE);
-            shape.scale.set(10);
-            shape.x = (app.screen.width - shape.width) / 2;
-            shape.y = (app.screen.height - shape.height) / 2;
-
-            shape.interactive = true;
-            shape.cursor = 'pointer';
-            shape.onclick = () => {
-                const bounds = shape.getBounds();
-                // Expand the bounds by 10 pixels!
-                Object.assign(shape, bounds.expand(10));
-            };
-            app.stage.addChild(shape);
+        <script type="importmap">
+            {
+                "imports": {
+                    "pixi.js": "https://cdn.jsdelivr.net/npm/pixi.js@8/dist/pixi.mjs",
+                    "@pixi/rectangle-helpers": "../dist/pixi-rectangle-helpers.mjs"
+                }
+            }
+        </script>
+        <script type="module">
+            import { Application, Texture, Sprite, Rectangle } from 'pixi.js';
+            import '@pixi/rectangle-helpers';
+            const app = new Application();
+            await app.init({ background: '#999' });
+            document.body.appendChild(app.canvas);
+            app.stage.addChild(new Sprite({
+                texture: Texture.WHITE,
+                width: 100,
+                height: 100,
+                x: (app.screen.width - 100) / 2,
+                y: (app.screen.height - 100) / 2,
+                eventMode: 'static',
+                cursor: 'pointer',
+                onclick: (event) => {
+                    const { rectangle } = event.target.getBounds();
+                    // Expand the bounds by 10 pixels!
+                    Object.assign(event.target, rectangle.expand(10));
+                }
+            }));
         </script>
     </body>
 </html>

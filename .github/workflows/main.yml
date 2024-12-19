@@ -1,23 +1,21 @@
-name: Build CI
+name: Automation
 on:
   push:
-    branches: [ '**' ]
-    tags: [ '**' ]
+    branches: ['**']
+    tags: ['**']
   release:
-    types: [ 'created' ]
+    types: ['created']
   pull_request:
-    branches: [ '**' ]
+    branches: ['**']
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 16.x
-      uses: actions/setup-node@v3
+    - uses: actions/checkout@v4
+    - name: Use Node.js 20.x
+      uses: actions/setup-node@v4
       with:
-        node-version: 16
-    - name: Install npm
-      run: npm install -g npm@8
+        node-version: 20
     - name: Install dependencies
       run: npm ci
     - name: Build

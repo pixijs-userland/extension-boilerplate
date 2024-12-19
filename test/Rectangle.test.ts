@@ -1,4 +1,4 @@
-import { Rectangle } from '@pixi/core';
+import { Rectangle } from 'pixi.js';
 import '../src/index';
 
 describe('Rectangle', () =>
