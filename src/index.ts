@@ -11,6 +11,12 @@ declare global
          * PixiJS's Rectangle class.
          * @class Rectangle
          * @see https://pixijs.download/main/docs/maths.Rectangle.html
+         * @example
+         * import { Rectangle } from 'pixi.js';
+         * import '@pixi/rectangle-helpers';
+         *
+         * const rect = new Rectangle(0, 0, 100, 100);
+         * rect.expand(10);
          */
         interface Rectangle
         {
@@ -22,7 +28,6 @@ declare global
              * @method expand
              * @memberof Rectangle
              * @example
-             * import { Rectangle } from 'pixi.js';
              * const rect = new Rectangle(0, 0, 100, 100);
              * rect.expand(10);
              * @param {number} amount - The amount to expand (if greater than 0) or contract (if less than 0)
