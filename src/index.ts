@@ -1,18 +1,23 @@
-// eslint-disable-next-line @typescript-eslint/triple-slash-reference,spaced-comment
-/// <reference path="../global.d.ts" />
-
 import { Rectangle } from 'pixi.js';
 
-/**
- * Global PixiJS namespace.
- * @namespace PIXI
- * @see https://pixijs.download/main/docs/PIXI.html
- */
+// PixiJS uses a special global type object called PixiMixins
+// this can be used to add methods to existing PixiJS classes.
+declare global
+{
+    // eslint-disable-next-line @typescript-eslint/no-namespace
+    namespace PixiMixins
+    {
+        interface Rectangle
+        {
+            expand(amount: number): this;
+        }
+    }
+}
 
 /**
  * PixiJS's Rectangle class.
- * @class PIXI.Rectangle
- * @see https://pixijs.download/main/docs/PIXI.Rectangle.html
+ * @class Rectangle
+ * @see https://pixijs.download/main/docs/maths.Rectangle.html
  */
 
 /**
@@ -21,13 +26,13 @@ import { Rectangle } from 'pixi.js';
  * to contract the Rectangle.
  *
  * @method expand
- * @memberof PIXI.Rectangle
+ * @memberof Rectangle
  * @example
  * import { Rectangle } from 'pixi.js';
  * const rect = new Rectangle(0, 0, 100, 100);
  * rect.expand(10);
  * @param {number} amount - The amount to expand (if greater than 0) or contract (if less than 0)
- * @return {PIXI.Rectangle} Instance for chaining.
+ * @return {Rectangle} Instance for chaining.
  */
 Rectangle.prototype.expand = function expand(this: Rectangle, amount: number): Rectangle
 {

@@ -39,8 +39,7 @@
   },
   "files": [
     "dist/",
-    "lib/",
-    "global.d.ts"
+    "lib/"
   ],
   "peerDependencies": {
     "pixi.js": ">=8 <9"
