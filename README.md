@@ -1,3 +1,6 @@
+> [!WARNING]
+> This project is no longer maintained and has been moved into [PixiJS Create](https://github.com/pixijs/create-pixi).
+
 # PixiJS Extension Boilerplate
 
 This is a simple boilerplate project powered by [PixiJS Extension Scripts](https://github.com/pixijs/extension-scripts). It demonstrates how you can create an extension for PixiJS that works with TypeScript, generates all the necessary build files and supports documentation (with webdoc) and unit-testing (with Jest).
